@@ -22,7 +22,16 @@ sort([]); // []
 ***********************************************************************/
 
 function sort(nums, sorted = []) {
-    // Your code here 
+    if (nums.length === 0) return sorted
+
+    let min = Math.min(...nums)
+    nums.find((num) => min === num) // 1
+
+    sorted.push()
+
+    sort([4,1,6,3,1,7]); // [1, 1, 3, 4, 6, 7]
+
+
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
