@@ -33,9 +33,14 @@ let y = x.slice();
 console.log(x[0] === y[0]) // true
 ***********************************************************************/
 
+//? base case:
+//? recursive step:
 
 function deepDup(arr) {
-  // Your code here 
+  let newarr = []
+  arr.forEach((ele) => Array.isArray(ele) ? newarr.push(deepDup(ele)) : newarr.push(ele))
+
+  return newarr
 }
 
 

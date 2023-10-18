@@ -24,22 +24,14 @@ sort([]); // []
 function sort(nums, sorted = []) {
   debugger;
   if (nums.length === 0) return sorted;
-  //   let min = nums[0];
-  //   let index = 0;
 
   let min = Math.min(...nums);
   let index = nums.findIndex((num) => {
     return min === num;
   });
-  //   for (let i = 0; i < nums.length; i++) {
-  //     if (nums[i] < min) {
-  //       min = nums[i];
-  //       index = i;
-  //     }
-  //   }
 
   sorted.push(...nums.splice(index, 1));
-  //   nums = nums.splice(index, 1);
+  
   return sort(nums, sorted);
 }
 
