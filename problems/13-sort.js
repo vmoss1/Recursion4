@@ -22,17 +22,28 @@ sort([]); // []
 ***********************************************************************/
 
 function sort(nums, sorted = []) {
-    if (nums.length === 0) return sorted
+  debugger;
+  if (nums.length === 0) return sorted;
+  //   let min = nums[0];
+  //   let index = 0;
 
-    let min = Math.min(...nums)
-    nums.find((num) => min === num) // 1
+  let min = Math.min(...nums);
+  let index = nums.findIndex((num) => {
+    return min === num;
+  });
+  //   for (let i = 0; i < nums.length; i++) {
+  //     if (nums[i] < min) {
+  //       min = nums[i];
+  //       index = i;
+  //     }
+  //   }
 
-    sorted.push()
-
-    sort([4,1,6,3,1,7]); // [1, 1, 3, 4, 6, 7]
-
-
+  sorted.push(...nums.splice(index, 1));
+  //   nums = nums.splice(index, 1);
+  return sort(nums, sorted);
 }
+
+console.log(sort([4, 1, 6, 3, 1, 7])); // [1, 1, 3, 4, 6, 7]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 module.exports = sort;
